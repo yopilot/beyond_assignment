@@ -1,0 +1,392 @@
+/* Sentiment Analysis Visualization Styles */
+
+
+.sentiment-summary {
+    margin-bottom: 20px;
+}
+
+.sentiment-summary-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Sentiment Distribution Bar */
+.sentiment-score-container {
+    margin: 25px 0;
+}
+
+.sentiment-bar {
+    display: flex;
+    height: 30px;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.sentiment-bar-positive {
+    background: linear-gradient(90deg, #36b37e, #00875a);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.sentiment-bar-negative {
+    background: linear-gradient(90deg, #ff5630, #de350b);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.sentiment-counts {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.positive-count {
+    color: #00875a;
+    font-weight: 500;
+}
+
+.negative-count {
+    color: #de350b;
+    font-weight: 500;
+}
+
+/* Word Clouds */
+.word-clouds {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.word-cloud {
+    flex: 1;
+    min-width: 250px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.positive-cloud {
+    background: rgba(54, 179, 126, 0.1);
+    border: 1px solid rgba(54, 179, 126, 0.3);
+}
+
+.negative-cloud {
+    background: rgba(255, 86, 48, 0.1);
+    border: 1px solid rgba(255, 86, 48, 0.3);
+}
+
+.cloud-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.cloud-word {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.positive-word {
+    background: rgba(54, 179, 126, 0.2);
+    color: #00875a;
+}
+
+.negative-word {
+    background: rgba(255, 86, 48, 0.2);
+    color: #de350b;
+}
+
+/* Subreddit Sentiment */
+.subreddit-sentiment {
+    margin: 25px 0;
+}
+
+.subreddit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.subreddit-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.subreddit-name {
+    flex: 1;
+    font-weight: 500;
+}
+
+.subreddit-sentiment-bar {
+    width: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.sentiment-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.sentiment-indicator.positive {
+    background-color: #36b37e;
+}
+
+.sentiment-indicator.negative {
+    background-color: #ff5630;
+}
+
+.sentiment-indicator.neutral {
+    background-color: #6b778c;
+}
+
+.subreddit-comment-count {
+    width: 100px;
+    text-align: right;
+    color: #6b778c;
+    font-size: 13px;
+}
+
+/* Sample Comments */
+.sentiment-samples {
+    margin: 25px 0;
+}
+
+.sample-tabs {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+
+.tab-button {
+    padding: 12px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    color: #6b778c;
+    transition: all 0.2s ease;
+}
+
+.tab-button:hover {
+    background: #f8f9fa;
+}
+
+.tab-button.active {
+    color: #0052cc;
+    border-bottom: 2px solid #0052cc;
+}
+
+.tab-content {
+    padding: 15px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.sample-comment {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.positive-comment {
+    background: rgba(54, 179, 126, 0.1);
+    border-left: 3px solid #36b37e;
+}
+
+.negative-comment {
+    background: rgba(255, 86, 48, 0.1);
+    border-left: 3px solid #ff5630;
+}
+
+.neutral-comment {
+    background: rgba(107, 119, 140, 0.1);
+    border-left: 3px solid #6b778c;
+}
+
+/* MBTI Personality Dimensions Styles */
+.mbti-container {
+    margin: 30px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    padding: 25px;
+    color: white;
+}
+
+.mbti-container h3 {
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.mbti-dimensions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mbti-dimension {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.mbti-dimension h4 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    text-align: center;
+    color: #f8f9fa;
+}
+
+.mbti-bar {
+    display: flex;
+    height: 40px;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 10px 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.mbti-bar-left, .mbti-bar-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    font-size: 14px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.mbti-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Extrovert vs Introvert */
+.extrovert {
+    background: linear-gradient(90deg, #ff6b6b, #ee5a52);
+}
+
+.introvert {
+    background: linear-gradient(90deg, #4ecdc4, #44a08d);
+}
+
+/* Sensing vs Intuition */
+.sensing {
+    background: linear-gradient(90deg, #45b7d1, #3498db);
+}
+
+.intuition {
+    background: linear-gradient(90deg, #96ceb4, #2ecc71);
+}
+
+/* Thinking vs Feeling */
+.thinking {
+    background: linear-gradient(90deg, #feca57, #ff9ff3);
+}
+
+.feeling {
+    background: linear-gradient(90deg, #ff9a9e, #fecfef);
+}
+
+/* Judging vs Perceiving */
+.judging {
+    background: linear-gradient(90deg, #a8edea, #fed6e3);
+}
+
+.perceiving {
+    background: linear-gradient(90deg, #fad0c4, #ffd1ff);
+}
+
+.mbti-counts {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.count-left, .count-right {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.mbti-summary {
+    margin-top: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.mbti-type {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #f8f9fa;
+}
+
+.mbti-note {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+}
+
+/* Responsive design for MBTI */
+@media (max-width: 768px) {
+    .mbti-dimension h4 {
+        font-size: 16px;
+    }
+    
+    .mbti-bar {
+        height: 35px;
+    }
+    
+    .mbti-label {
+        font-size: 12px;
+    }
+    
+    .mbti-counts {
+        font-size: 11px;
+    }
+}

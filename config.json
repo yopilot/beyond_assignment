@@ -1,0 +1,18 @@
+{
+  "reddit": {
+    "client_id": "IPvPJjBmy6Z2f6gPNT25cA",
+    "client_secret": "t505-_QfOeJfppU8PGzDGbaqjdFZLg",
+    "user_agent": "RedditPersonaGenerator/2.0 by YogeshSharma"
+  },
+  "model": {
+    "name": "microsoft/DialoGPT-medium",
+    "max_length": 500,
+    "temperature": 0.7,
+    "top_p": 0.9
+  },
+  "scraping": {
+    "max_posts": 100,
+    "max_comments": 200,
+    "days_limit": 365
+  }
+}
