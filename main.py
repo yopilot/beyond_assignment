@@ -1,10 +1,32 @@
 """Main entry point for Reddit Persona Generator."""
 
 import argparse
+import os
 import sys
 import torch
 from reddit_persona_generator import RedditPersonaGenerator
 from web_interface import start_web_interface
+
+# Set environment variables for safetensors preference
+os.environ['TRANSFORMERS_PREFER_SAFETENSORS'] = '1'
+os.environ['HF_HUB_ENABLE_HF_TRANSFER'] = '1'
+
+# Load .env file if it exists
+def load_env_file():
+    """Load environment variables from .env file if it exists."""
+    try:
+        if os.path.exists('.env'):
+            with open('.env', 'r') as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith('#') and '=' in line:
+                        key, value = line.split('=', 1)
+                        os.environ[key.strip()] = value.strip()
+    except Exception as e:
+        print(f"Warning: Could not load .env file: {e}")
+
+# Load environment variables
+load_env_file()
 
 def show_gpu_info():
     """Show GPU information."""

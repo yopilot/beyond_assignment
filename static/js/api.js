@@ -150,8 +150,8 @@ function startProgressTracking() {
                 consecutiveErrors = 0;
             }
 
-            // Show reset button after 60 seconds if not already shown
-            if (!resetButtonShown && (Date.now() - progressStartTime > 60000)) {
+            // Show reset button after 2 minutes if not already shown (CPU generation takes longer)
+            if (!resetButtonShown && (Date.now() - progressStartTime > 120000)) {
                 document.getElementById('resetProgressBtn').style.display = 'block';
                 resetButtonShown = true;
             }
@@ -352,5 +352,5 @@ function startProgressTracking() {
                 }
             }
         }
-    }, 250); // Poll every 250ms for more responsive progress updates
+    }, 1000); // Poll every 1000ms (1 second) for CPU-friendly updates
 }

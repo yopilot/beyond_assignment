@@ -1,14 +1,17 @@
 {
   "reddit": {
-    "client_id": "IPvPJjBmy6Z2f6gPNT25cA",
-    "client_secret": "t505-_QfOeJfppU8PGzDGbaqjdFZLg",
+    "client_id": "F-cWnN2cNn6Ldm7SNfS0qw",
+    "client_secret": "gHRBBzbNK-1JiT14-t6FeYmygkhtFQ",
     "user_agent": "RedditPersonaGenerator/2.0 by YogeshSharma"
   },
   "model": {
     "name": "microsoft/DialoGPT-medium",
-    "max_length": 500,
+    "max_new_tokens": 128,
     "temperature": 0.7,
-    "top_p": 0.9
+    "top_p": 0.9,
+    "use_safetensors": true,
+    "trust_remote_code": false,
+    "low_cpu_mem_usage": true
   },
   "scraping": {
     "max_posts": 100,

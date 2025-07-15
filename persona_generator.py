@@ -50,46 +50,56 @@ class PersonaGenerator:
         
         self.update_progress("generating_persona", 0, "Creating persona prompt...")
         
-        # Create a more structured prompt with proper length management
-        prompt = f"""Analyze this Reddit user's activity and create a detailed persona:
-
-Username: {username}
-Posts analyzed: {len(posts)}
-Comments analyzed: {len(comments)}
-
-POST ACTIVITY SUMMARY:
-{post_summary}
-
-COMMENT ACTIVITY SUMMARY:
-{comment_summary}
-
-Based on this data, create a comprehensive user persona that includes:
-1. Communication style and tone
-2. Main interests and topics
-3. Personality traits
-4. Online behavior patterns
-5. Likely demographics
-
-PERSONA:"""
+        # Create a shorter, more efficient prompt for CPU performance
+        # Get key data for analysis
+        top_subs = get_top_subreddits(posts, comments)[:3]  # Top 3 subreddits
+        total_activity = len(posts) + len(comments)
         
-        # KEY FIX: Proper input length management
-        max_input_length = 1024  # Reasonable input length
-        if len(prompt) > max_input_length:
-            prompt = prompt[:max_input_length] + "..."
-            self.logger.info("Prompt truncated to prevent hanging")
+        # Shorter, more focused prompt for CPU efficiency
+        prompt = f"""User: {username}
+Activity: {len(posts)} posts, {len(comments)} comments
+Top interests: {', '.join(top_subs)}
+
+Create a brief personality profile covering:
+- Communication style
+- Main interests  
+- Key traits
+
+PROFILE:"""
         
-        self.update_progress("generating_persona", 20, "AI generating personality profile...")
+        self.update_progress("generating_persona", 20, "Starting AI generation (this may take 2-5 minutes on CPU)...")
+        
+        # Add periodic progress updates during generation
+        import threading
+        import time
+        
+        def progress_updater():
+            """Update progress periodically during generation"""
+            for i in range(21, 80, 10):
+                time.sleep(15)  # Update every 15 seconds
+                if not hasattr(self, '_generation_complete'):
+                    self.update_progress("generating_persona", i, f"AI still generating... ({i}% complete)")
+        
+        # Start progress updater in background
+        self._generation_complete = False
+        progress_thread = threading.Thread(target=progress_updater, daemon=True)
+        progress_thread.start()
         
         try:
             # Try AI generation first with timeout protection
             persona = self.model_manager.generate_with_timeout(prompt)
+            self._generation_complete = True
+            
             if persona:
-                self.update_progress("generating_persona", 80, "AI generation complete, processing results...")
-                # Small delay to make progress visible
+                self.update_progress("generating_persona", 85, "AI generation complete, processing results...")
                 time.sleep(0.2)
                 self.update_progress("generating_persona", 100, "Persona generation complete!")
                 return persona, sentiment_data
+            else:
+                self.logger.warning("AI generation returned empty result, using fallback")
+                
         except Exception as e:
+            self._generation_complete = True
             self.logger.warning(f"AI generation failed: {e}, falling back to rule-based generation")
         
         # Fallback to rule-based generation
