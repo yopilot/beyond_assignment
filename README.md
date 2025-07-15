@@ -6,6 +6,9 @@ The **Reddit Persona Generator** is a tool that analyzes a Reddit user's activit
 
 ## Overview
 
+
+[📺 Watch Demo on YouTube](https://youtu.be/g3Jl2Y5tm0s)
+
 This application scrapes a Reddit user's post and comment history, analyzes the content using AI or statistical methods, and generates a comprehensive persona that includes:
 
 - Communication style and tone
