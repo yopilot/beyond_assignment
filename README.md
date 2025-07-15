@@ -6,8 +6,7 @@ The **Reddit Persona Generator** is a tool that analyzes a Reddit user's activit
 
 ## Overview
 
-
-[![Watch the demo](https://img.youtube.com/vi/g3Jl2Y5tm0s/1.jpg)](https://www.youtube.com/watch?v=g3Jl2Y5tm0s)
+[![Watch the demo](https://github.com/user-attachments/assets/f5a15e6f-a06e-4312-8f14-1386f2c52777)](https://www.youtube.com/watch?v=g3Jl2Y5tm0s)
 
 
 ### [📺 Watch Demo on YouTube](https://youtu.be/g3Jl2Y5tm0s)
