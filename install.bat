@@ -1,9 +1,6 @@
 @echo off
 echo Setting up Reddit Persona Generator...
 
-REM Create virtual environment
-python -m venv venv
-call venv\Scripts\activate
 
 REM Install requirements
 pip install -r requirements.txt --upgrade
