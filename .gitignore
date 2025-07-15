@@ -38,7 +38,9 @@ ENV/
 Thumbs.db
 
 # Application specific
-output/
+# ignore everything inside output folder, keep the folder itself
+output/*
+!output/
 logs/
 *.log
 persona_generator.log

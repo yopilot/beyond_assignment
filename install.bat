@@ -1,18 +1,13 @@
 @echo off
 echo Setting up Reddit Persona Generator...
 
-REM Create virtual environment
-python -m venv venv
-call venv\Scripts\activate
+
 
 REM Install requirements
 pip install -r requirements.txt --upgrade
 
 REM Setup safetensors environment
 python setup_safetensors.py
-
-REM Test safetensors setup
-python test_safetensors.py
 
 REM Create necessary directories
 mkdir templates 2>nul
